@@ -1,9 +1,10 @@
 const CACHE_NAME = 'xogx-cache-v1';
 const FILES_TO_CACHE = [
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/gamehub-local.html'
+  'index.html',
+  'styles.css',
+  'script.js',
+  'gamehub-local.html',
+  'manifest.webmanifest'
 ];
 
 self.addEventListener('install', (evt) => {
@@ -25,6 +26,13 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
   if (evt.request.method !== 'GET') return;
   evt.respondWith(
-    caches.match(evt.request).then((resp) => resp || fetch(evt.request))
+    caches.match(evt.request).then((resp) => {
+      if (resp) return resp;
+      return fetch(evt.request).catch(() => {
+        if (evt.request.mode === 'navigate') {
+          return caches.match('index.html');
+        }
+      });
+    })
   );
 });
