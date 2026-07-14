@@ -7,16 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install
-        run: npm ci
-      - name: Build (no-op)
-        run: echo "publishing static files"
+      - name: Skip install
+        run: echo "no install needed"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
