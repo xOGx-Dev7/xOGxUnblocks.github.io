@@ -1,0 +1,14 @@
+{
+  "name": "xogx-unblocked-electron",
+  "version": "0.1.0",
+  "description": "Desktop wrapper for xOGx Unblocked Games (local HTML)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package:linux": "npx electron-packager . xOGxUnblocks --platform=linux --arch=x64 --out=dist --overwrite",
+    "package:windows": "npx electron-packager . xOGxUnblocks --platform=win32 --arch=ia32 --out=dist --overwrite"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0"
+  }
+}

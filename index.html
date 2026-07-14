@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xOGx Unblocked Games</title>
+    <meta
+      name="description"
+      content="A dark, high-energy unblocked games hub with thousands of titles across horror, multiplayer, shooting, and more."
+    />
+    <meta name="theme-color" content="#06070b" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand">xOGx Unblocked</div>
+        <nav class="top-nav">
+          <a href="#horror">Horror</a>
+          <a href="#multiplayer">Multiplayer</a>
+          <a href="#shooting">Shooting</a>
+          <a href="#all-games">All Games</a>
+        </nav>
+      </div>
+
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">3,000+ Games • Instant Play • Dark Mode</p>
+          <h1>Play the best unblocked games in one neon-lit arcade.</h1>
+          <p class="hero-text">
+            Jump into horror escapes, fast-paced shooters, chaotic multiplayer battles,
+            and endless arcade fun without leaving the page.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#all-games">Browse Games</a>
+            <a class="btn btn-secondary" href="#categories">Explore Categories</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="stat-box">
+            <strong>3,000+</strong>
+            <span>Titles Ready</span>
+          </div>
+          <div class="stat-box">
+            <strong>24/7</strong>
+            <span>Free Access</span>
+          </div>
+          <div class="stat-box">
+            <strong>Zero</strong>
+            <span>Download Needed</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="filter-bar" id="categories">
+        <input id="searchInput" type="text" placeholder="Search games, genres, or modes..." />
+        <div class="chip-row" id="chipRow">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="horror">Horror</button>
+          <button class="chip" data-filter="multiplayer">Multiplayer</button>
+          <button class="chip" data-filter="shooting">Shooting</button>
+          <button class="chip" data-filter="racing">Racing</button>
+          <button class="chip" data-filter="sports">Sports</button>
+          <button class="chip" data-filter="strategy">Strategy</button>
+        </div>
+      </section>
+
+      <section class="section-block" id="horror">
+        <div class="section-head">
+          <h2>Horror</h2>
+          <span>Scary, tense, and unforgettable</span>
+        </div>
+        <div class="card-grid" data-section="horror"></div>
+      </section>
+
+      <section class="section-block" id="multiplayer">
+        <div class="section-head">
+          <h2>Multiplayer</h2>
+          <span>Battle with friends and rivals</span>
+        </div>
+        <div class="card-grid" data-section="multiplayer"></div>
+      </section>
+
+      <section class="section-block" id="shooting">
+        <div class="section-head">
+          <h2>Shooting</h2>
+          <span>Fast reactions, big action</span>
+        </div>
+        <div class="card-grid" data-section="shooting"></div>
+      </section>
+
+      <section class="section-block" id="all-games">
+        <div class="section-head">
+          <h2>All Games</h2>
+          <span>Showing 72 live cards from a 3,000+ library</span>
+        </div>
+        <div class="card-grid" id="allGamesGrid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+        }
+      </script>
+  </body>
+</html>
